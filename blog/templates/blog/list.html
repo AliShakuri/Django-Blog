@@ -10,7 +10,7 @@
         <div class="row">
             <div class="col-lg-8 col-md-10 mx-auto">
                 <div class="site-heading">
-                    <h1>سیلسیوم</h1>
+                    <h1>زیرِ صفر</h1>
                 </div>
             </div>
         </div>
@@ -29,7 +29,7 @@
                 </a>
                 <p class="post-meta">
                     نوشته شده توسط
-                    <a href="#!">علی</a>
+                    <a href="{% url 'blog:author' article.author %}">{{article.author.get_full_name}}</a>
                     {{article.jpublish}}
                 <div>
                     {% for cat in article.category.active %}
