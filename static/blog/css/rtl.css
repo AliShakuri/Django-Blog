@@ -23,15 +23,18 @@ body {
 }
 
 header.masthead .site-heading h1 {
-    font-size: 40px;
+    font-size: 60px;
+    font-family: Sahel;
 }
 
 .post-title {
-    font-size: 28px !important;
+    font-size: 30px !important;
+    font-family: Sahel;
 }
 
 .post-subtitle {
-    font-size: 16px;
+    font-size: 18px;
+    font-family: Sahel;
 }
 
 .pager-botton {
@@ -101,14 +104,19 @@ header.masthead .site-heading h1 {
     display: block !important;
 }
 
+#mainNav {
+    font-family: Sahel;
+    font-size: ;
+}
 
+#mainNav .navbar-nav > li.nav-item > a {
+    font-size: 18px;
+}
 
+.navbar-brand {
+    font-size: 32px;
+}
 
-
-
-
-
-
-
-
-
+.alert.alert-primary.text-center {
+    font-family: Sahel;
+}
