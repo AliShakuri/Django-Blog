@@ -26,6 +26,7 @@ urlpatterns = [
     path('activate/<uidb64>/<token>/', activate, name='activate'),
     path('account/', include('account.urls')),
     path('admin/', admin.site.urls),
+     path('comment/', include('comment.urls')),
 ]
 
 from django.conf.urls.static import static
