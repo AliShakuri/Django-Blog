@@ -96,7 +96,7 @@ class Register(CreateView):
         user.is_active = False
         user.save()
         current_site = get_current_site(self.request)
-        mail_subject = 'فعال سازی اکانت.'
+        mail_subject = 'فعال سازی اکانت'
         message = render_to_string('registration/activate_account.html', {
             'user': user,
             'domain': current_site.domain,
