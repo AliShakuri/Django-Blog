@@ -23,7 +23,12 @@
     <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
             {% block header %}{% endblock %}
-            {% popular_articles %}
+            
+            <aside>
+                {% popular_articles %}
+                {% hot_articles %}
+            </aside>
+
             {% for article in object_list %}
             <div class="post-preview">
                 <a href="{% url 'blog:detail' article.slug %}">
