@@ -5,8 +5,6 @@ from django.shortcuts import render, get_object_or_404
 from account.mixins import AuthorAccessMixin
 # from django.http import HttpResponse, Http404
 from .models import Article, Category
-
-
 class ArticleList(ListView):
     queryset = Article.objects.published()
     paginate_by = 3
