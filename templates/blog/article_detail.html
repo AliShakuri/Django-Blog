@@ -15,6 +15,7 @@
                     <h1>{{object.title}}</h1>
                     <time>{{object.jpublish}}</time>
                     <div>{% ratings object %}</div>
+                    <div>بازدیدها : {{object.hits.count}}</div>
                     {% if article.is_special %}
                         <span class="badge badge-danger" style="font-size: 16px;">ویژه</span>
                     {% endif %}
