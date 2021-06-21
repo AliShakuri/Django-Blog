@@ -2,6 +2,7 @@
 {% load comment_tags %}
 {% load ratings %}
 {% load base_tags %}
+{% load humanize %}
 
 {% block title %} | {{object.title}} {% endblock %}
 
@@ -14,7 +15,7 @@
             <div class="col-lg-8 col-md-10 mx-auto">
                 <div class="site-heading">
                     <h1>{{object.title}}</h1>
-                    <time>{{object.jpublish}}</time>
+                    <time>{{object.publish|naturaltime}}</time>
                     <div>{% ratings object %}</div>
                     <div>بازدیدها : {{object.hits.count}}</div>
                     {% if article.is_special %}
