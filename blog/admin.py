@@ -1,5 +1,6 @@
 from django.contrib import admin
 from .models import Article, Category, IPAddress
+from account.models import User
 
 # Admin header chang
 admin.site.site_header = 'وبلاگ جنگویی من'
@@ -34,6 +35,11 @@ admin.site.register(Category, CategoryAdmin)
 
 
 class ArticleAdmin(admin.ModelAdmin):
+    def formfield_for_foreignkey(self, db_field, request, **kwargs):
+        if db_field.name == "author":
+            kwargs["queryset"] = User.objects.filter(is_staff=True)
+        return super().formfield_for_foreignkey(db_field, request, **kwargs)
+
     list_display = ('title', 'thumbnail_tag', 'slug', 'author', 'jpublish', 'is_special', 'status', 'category_to_str')
     list_filter = ('publish', 'status', 'author')
     search_fields = ('title', 'description')

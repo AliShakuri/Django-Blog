@@ -28,6 +28,7 @@ urlpatterns = [
     path('account/', include('account.urls')),
     path('admin/', admin.site.urls),
     path('comment/', include('comment.urls')),
+    path('ckeditor/', include('ckeditor_uploader.urls')),
 ]
 
 from django.conf.urls.static import static

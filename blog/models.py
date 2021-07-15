@@ -6,6 +6,7 @@ from django.utils import timezone
 from extensions.utils import jalali_converter
 from django.contrib.contenttypes.fields import GenericRelation
 from comment.models import Comment
+from ckeditor_uploader.fields import RichTextUploadingField
 
 
 # my managers
@@ -51,7 +52,7 @@ class Article(models.Model):
     title = models.CharField(max_length=200, verbose_name="عنوان مقاله")
     slug = models.SlugField(max_length=100, unique=True, verbose_name="آدرس مقاله")
     category = models.ManyToManyField(Category, verbose_name="دسته‌بندی", related_name="articles")
-    description = models.TextField(verbose_name="محتوا")
+    description = RichTextUploadingField(verbose_name="محتوا")
     thumbnail = models.ImageField(upload_to='image', verbose_name="تصویر مقاله")
     publish = models.DateTimeField(default=timezone.now, verbose_name="زمان انتشار")
     created = models.DateTimeField(auto_now_add=True)

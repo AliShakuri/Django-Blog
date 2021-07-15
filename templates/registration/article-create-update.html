@@ -22,7 +22,8 @@
                     {{ form.slug|as_crispy_field }}
                 </div>
                 <div class="col-12">
-                    {{ form.description|as_crispy_field }}
+                    {{ form.media }}
+                    {{ form.description }}
                 </div>
                 <div class="col-6">
                     {{ form.category|as_crispy_field }}
@@ -67,6 +68,6 @@
             {% endif %}
         </form>
       </div>
+    </div>
 </div>
-
 {% endblock %}
